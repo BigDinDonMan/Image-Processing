@@ -21,12 +21,6 @@ quickshift = segmentation.mark_boundaries(oh_hi_mark, quickshift)
 felzenszwalb = segmentation.felzenszwalb(oh_hi_mark, scale = 25, sigma = 1.5, min_size = 40)
 felzenszwalb = segmentation.mark_boundaries(oh_hi_mark, felzenszwalb)
 #display
-'''segmented = {'watershed': watershed, 'slic': slic, 'quickshift' : quickshift, 'felzenszwalb' : felzenszwalb}
-for key in segmented.keys():
-    plt.subplot(1, 1, 1, title = key)
-    plt.imshow(segmented[key])
-    plt.axis('off')
-    plt.show()'''
 stack1, stack2 = np.hstack((watershed, slic)), np.hstack((quickshift, felzenszwalb))
 plt.subplot(2, 1, 1)
 plt.imshow(stack1)
