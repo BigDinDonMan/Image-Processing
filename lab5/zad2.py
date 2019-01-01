@@ -14,6 +14,7 @@ star, octagon, diamond = morph.star(5), morph.octagon(3, 3), morph.diamond(5)
 
 structs = [disk, square, rect, star, octagon, diamond]
 
+#was using these to see which structure elements worked best
 opened, closed = [dilation(erosion(img, i), i) for i in structs], [erosion(dilation(img, i), i) for i in structs]
 
 final = erosion(img, square)
